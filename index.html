@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帕鲁特金矿矿区设备参数与故障手册</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", sans-serif;
+    background: #f4f6f8;
+    color: #333;
+    min-height: 100vh;
+  }
+
+  /* 顶部标题 */
+  header {
+    background: linear-gradient(135deg, #2c3e50, #455a64);
+    color: #fff;
+    padding: 18px 24px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  }
+  header h1 { font-size: 22px; letter-spacing: 1px; }
+
+  /* 主体布局 */
+  .container {
+    display: flex;
+    min-height: calc(100vh - 64px);
+  }
+
+  /* 左侧导航菜单 */
+  nav {
+    width: 200px;
+    background: #37474f;
+    color: #cfd8dc;
+    flex-shrink: 0;
+  }
+  nav .menu-item {
+    padding: 16px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #455a64;
+    transition: background .2s;
+  }
+  nav .menu-item:hover,
+  nav .menu-item.active {
+    background: #546e7a;
+    color: #fff;
+  }
+
+  /* 右侧主内容区 */
+  main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .content-page{
+    display: none;
+  }
+  .content-page.active{
+    display:block;
+  }
+
+  .category-title {
+    font-size: 18px;
+    color: #37474f;
+    margin-bottom: 16px;
+    padding-left: 8px;
+    border-left: 4px solid #546e7a;
+  }
+
+  /* 设备折叠卡片 */
+  .device-card {
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+    overflow: hidden;
+  }
+  .device-header {
+    padding: 14px 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eceff1;
+    font-weight: bold;
+    color: #263238;
+  }
+  .device-header:hover { background: #e0e6e9; }
+  .device-header .arrow { transition: transform .2s; }
+  .device-header.open .arrow { transform: rotate(90deg); }
+
+  .device-body { display: none; padding: 14px 18px; }
+  .device-body.open { display: block; }
+
+  /* 参数表格 */
+  .param-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top:8px;
+  }
+  .param-table td,.param-table th{
+    border:1px solid #ddd;
+    padding:8px 10px;
+  }
+  .param-table th{
+    background:#f2f4f5;
+    text-align:left;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>帕鲁特金矿矿区设备参数与故障手册</h1>
+</header>
+<div class="container">
+  <!--左侧菜单-->
+  <nav>
+    <div class="menu-item active" data-target="page1">钻探设备</div>
+    <div class="menu-item" data-target="page2">充填泵设备</div>
+    <div class="menu-item" data-target="page3">软启动&变频器</div>
+    <div class="menu-item" data-target="page4">高压开关柜</div>
+  </nav>
+
+  <!--右侧内容区域-->
+  <main>
+    <!--页面1：钻探设备-->
+    <div class="content-page active" id="page1">
+      <h2 class="category-title">钻探设备参数与故障</h2>
+      <div class="device-card">
+        <div class="device-header">
+          探矿钻机 <span class="arrow">▶</span>
+        </div>
+        <div class="device-body">
+          <table class="param-table">
+            <tr>
+              <th>项目</th>
+              <th>参数</th>
+            </tr>
+            <tr>
+              <td>额定压力</td>
+              <td>25MPa</td>
+            </tr>
+            <tr>
+              <td>常见故障</td>
+              <td>液动换向阀不动作、摆动缸无输出</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--页面2：充填泵设备-->
+    <div class="content-page" id="page2">
+      <h2 class="category-title">充填泵设备参数与故障</h2>
+      <div class="device-card">
+        <div class="device-header">
+          膏体充填泵 <span class="arrow">▶</span>
+        </div>
+        <div class="device-body">
+          <table class="param-table">
+            <tr>
+              <th>项目</th>
+              <th>参数</th>
+            </tr>
+            <tr>
+              <td>控制元件</td>
+              <td>液动换向阀</td>
+            </tr>
+            <tr>
+              <td>故障现象</td>
+              <td>摆缸不换向、压力上不去</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--页面3：软启动&变频器-->
+    <div class="content-page" id="page3">
+      <h2 class="category-title">软启动、变频器</h2>
+      <div class="device-card">
+        <div class="device-header">
+          ATS48软启动器 <span class="arrow">▶</span>
+        </div>
+        <div class="device-body">
+          <table class="param-table">
+            <tr>
+              <th>故障</th>
+              <th>原因</th>
+            </tr>
+            <tr>
+              <td>晶闸管击穿</td>
+              <td>过压、散热不良，连带烧毁主控板</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--页面4：高压开关柜-->
+    <div class="content-page" id="page4">
+      <h2 class="category-title">高压开关柜</h2>
+      <div class="device-card">
+        <div class="device-header">
+          矿用高压柜 <span class="arrow">▶</span>
+        </div>
+        <div class="device-body">
+          <table class="param-table">
+            <tr>
+              <th>五防要点</th>
+              <th>说明</th>
+            </tr>
+            <tr>
+              <td>接地刀闸</td>
+              <td>仅检修合闸；备用、运行状态地刀必须拉开</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+// 1.左侧菜单切换页面
+const menuItems = document.querySelectorAll('.menu-item');
+const pages = document.querySelectorAll('.content-page');
+menuItems.forEach(item=>{
+  item.onclick = function(){
+    //清空全部激活
+    menuItems.forEach(m=>m.classList.remove('active'));
+    pages.forEach(p=>p.classList.remove('active'));
+    //激活当前
+    this.classList.add('active');
+    const targetId = this.getAttribute('data-target');
+    document.getElementById(targetId).classList.add('active');
+  }
+})
+
+//2.设备卡片点击展开折叠
+const deviceHeaders = document.querySelectorAll('.device-header');
+deviceHeaders.forEach(header=>{
+  header.onclick = function(){
+    this.classList.toggle('open');
+    this.nextElementSibling.classList.toggle('open');
+  }
+})
+</script>
+</body>
+</html>
