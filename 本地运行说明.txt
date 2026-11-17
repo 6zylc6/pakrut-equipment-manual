@@ -1,0 +1,24 @@
+﻿帕鲁特金矿智能运维平台 V4.2（公网部署版）
+
+一、在 Windows 笔记本本地运行
+1. 将本文件夹解压到一个固定位置。
+2. 安装 Python 3.10 或更新版本，安装时勾选 Add Python to PATH。
+3. 双击“安装运行依赖.bat”，等待安装完成。
+4. 双击“本地启动网站.bat”，保持弹出的黑色窗口运行。
+5. 浏览器打开 http://127.0.0.1:8765/ 。
+
+二、网站相关文件
+- index.html：平台网页页面，包含设备档案与知识库界面。
+- server.py：Python 后端，负责登录、AI 请求和库存数据服务。
+- requirements.txt：Python 运行依赖。
+- 本地启动网站.bat：启动本机网站。
+- 安装运行依赖.bat：安装运行所需的 Python 依赖。
+
+三、云端部署
+请先阅读 README.md，按其中步骤创建 GitHub 私有仓库并部署到 Railway。
+
+四、重要安全提醒
+- API Key 不要写入 index.html，不要上传 GitHub，也不要发给别人。
+- 云端部署必须设置 APP_PASSWORD、SESSION_SECRET，并把库存数据库和 ark_config.json 放入 Railway 持久化卷。
+- 本地配置文件 ark_config.json、库存数据库 inventory_shared.db 不应上传 GitHub。
+- 该平台是运维辅助工具，不替代矿山安全规程、设备联锁或正式生产控制系统。

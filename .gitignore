@@ -1,0 +1,19 @@
+# Secrets and local runtime data - DO NOT commit
+.env
+.env.*
+!.env.example
+ark_config.json
+inventory_shared.db
+inventory_shared.db-shm
+inventory_shared.db-wal
+/data/
+
+# Python / editor / OS
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

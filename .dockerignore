@@ -1,0 +1,12 @@
+# Never copy secrets or user data into the image
+.git
+.env
+.env.*
+ark_config.json
+*.db
+*.db-shm
+*.db-wal
+__pycache__/
+.venv/
+venv/
+*.zip
